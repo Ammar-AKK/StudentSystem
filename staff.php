@@ -70,14 +70,14 @@
         <strong><?= $msg ?></strong>
       </div>
     <?php } ?>
-    <h1 class="leading-4 text-center">اضافة حصة جديد</h1>
+    <h1 class="leading-4 text-center">اضافة كورس جديد</h1>
     <hr class="mx-auto mb-3" />
-    <form class="row" method="post">
+    <form class="row" method="post"> <!--للحماية -->
       <!-- Name -->
       <div class="col-12 my-2">
         <label for="City" class="form-label">الكورس</label>
         <select name="session_course" id="" class="form-select">
-          <?php foreach ($courses as $course ) {?>
+          <?php foreach ($courses as $course ) {?>           <!--من قاعدة البيانات -->
             <option value="<?= $course["id"] ?>"><?= $course["name"] ?></option>
           <?php } ?>
         </select>
@@ -85,11 +85,11 @@
       <div class="col-12 my-2">
         <label for="City" class="form-label">اليوم</label>
         <select name="session_day" id="" class="form-select">
-            <option value="2">الأحد</option>
-            <option value="3">الأثنين</option>
-            <option value="4">الثلاثاء</option>
-            <option value="5">الأربعاء</option>
-            <option value="6">الخميس</option>
+            <option value="1">الأحد</option>
+            <option value="2">الأثنين</option>
+            <option value="3">الثلاثاء</option>
+            <option value="4">الأربعاء</option>
+            <option value="5">الخميس</option>
         </select>
       </div>
       <div class="col-12 my-2">
@@ -132,58 +132,47 @@
   
   <div class="container border shadow rounded pt-3 pb-4 mt-5">
     <div class="row mt-4 px-2">
-    <h1 class="leading-4 text-center">الحصص</h1>
+    <h1 class="leading-4 text-center">الجدول</h1>
     <hr class="mx-auto mb-3" />
     <ul class="list-group">
-          <li class="list-group-item">السبت:
+
+          </li>
+          <li class="list-group-item">الأحد:
             <?php foreach ($sessions as $session ) {
               if( $session["day"] == 1 ){?>
                 <p><?= $session["course"] ?>: <?= $session["time"] ?>
                 <a class="btn btn-danger" href="?delete_session=<?= $session["id"] ?>">حذف</a></p>
             <?php }} ?>
           </li>
-          <li class="list-group-item">الأحد:
+          <li class="list-group-item">الأثنين:
             <?php foreach ($sessions as $session ) {
               if( $session["day"] == 2 ){?>
                 <p><?= $session["course"] ?>: <?= $session["time"] ?>
                 <a class="btn btn-danger" href="?delete_session=<?= $session["id"] ?>">حذف</a></p>
             <?php }} ?>
           </li>
-          <li class="list-group-item">الأثنين:
+          <li class="list-group-item">الثلاثاء:
             <?php foreach ($sessions as $session ) {
               if( $session["day"] == 3 ){?>
                 <p><?= $session["course"] ?>: <?= $session["time"] ?>
                 <a class="btn btn-danger" href="?delete_session=<?= $session["id"] ?>">حذف</a></p>
             <?php }} ?>
           </li>
-          <li class="list-group-item">الثلاثاء:
+          <li class="list-group-item">الأربعاء:
             <?php foreach ($sessions as $session ) {
               if( $session["day"] == 4 ){?>
                 <p><?= $session["course"] ?>: <?= $session["time"] ?>
                 <a class="btn btn-danger" href="?delete_session=<?= $session["id"] ?>">حذف</a></p>
             <?php }} ?>
           </li>
-          <li class="list-group-item">الأربعاء:
+          <li class="list-group-item">الخميس:
             <?php foreach ($sessions as $session ) {
               if( $session["day"] == 5 ){?>
                 <p><?= $session["course"] ?>: <?= $session["time"] ?>
                 <a class="btn btn-danger" href="?delete_session=<?= $session["id"] ?>">حذف</a></p>
             <?php }} ?>
           </li>
-          <li class="list-group-item">الخميس:
-            <?php foreach ($sessions as $session ) {
-              if( $session["day"] == 6 ){?>
-                <p><?= $session["course"] ?>: <?= $session["time"] ?>
-                <a class="btn btn-danger" href="?delete_session=<?= $session["id"] ?>">حذف</a></p>
-            <?php }} ?>
-          </li>
-          <li class="list-group-item">الجمعة:
-            <?php foreach ($sessions as $session ) {
-              if( $session["day"] == 7 ){?>
-                <p><?= $session["course"] ?>: <?= $session["time"] ?>
-                <a class="btn btn-danger" href="?delete_session=<?= $session["id"] ?>">حذف</a></p>
-            <?php }} ?>
-          </li>
+
 
         </ul>
   </div>

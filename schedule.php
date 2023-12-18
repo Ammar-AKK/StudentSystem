@@ -64,31 +64,31 @@
     <ul class="list-group">
           <li class="list-group-item">الأحد:
             <?php foreach ($sessions as $session ) {
-              if( $session["day"] == 2 ){?>
+              if( $session["day"] == 1 ){?>
                 <p><?= $session["course"] ?>: <?= $session["time"] ?></p>
             <?php }} ?>
           </li>
           <li class="list-group-item">الأثنين:
             <?php foreach ($sessions as $session ) {
-              if( $session["day"] == 3 ){?>
+              if( $session["day"] == 2 ){?>
                 <p><?= $session["course"] ?>: <?= $session["time"] ?></p>
             <?php }} ?>
           </li>
           <li class="list-group-item">الثلاثاء:
             <?php foreach ($sessions as $session ) {
-              if( $session["day"] == 4 ){?>
+              if( $session["day"] == 3 ){?>
                 <p><?= $session["course"] ?>: <?= $session["time"] ?></p>
             <?php }} ?>
           </li>
           <li class="list-group-item">الأربعاء:
             <?php foreach ($sessions as $session ) {
-              if( $session["day"] == 5 ){?>
+              if( $session["day"] == 4 ){?>
                 <p><?= $session["course"] ?>: <?= $session["time"] ?></p>
             <?php }} ?>
           </li>
           <li class="list-group-item">الخميس:
             <?php foreach ($sessions as $session ) {
-              if( $session["day"] == 6 ){?>
+              if( $session["day"] == 5 ){?>
                 <p><?= $session["course"] ?>: <?= $session["time"] ?></p>
             <?php }} ?>
           </li>
@@ -118,11 +118,13 @@
             <td><?= $course["name"] ?></td>
             <td>
               <?php if( $course["status"] == 0 ){?>
-                <p class="text-warning">في الأنتظار</p>
+                <p class="text-warning">في الإنتظار</p>
+
                 <?php }else{?>
                   <p class="text-danger">مرفوض</p>
                 <?php }?>
             </td>
+            
           </tr>
         <?php } ?>
       </tbody>

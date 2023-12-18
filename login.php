@@ -1,10 +1,10 @@
 <?php
 require_once './config.php';
 $msg = "";
-if( isset( $_SESSION["student"] )) header("location: ./student.php");
-if( isset( $_SESSION["staff"] )) header("location: ./staff.php");
+if( isset( $_SESSION["student"] )) header("location: ./student.php"); //تحويل السيشن للطالب
+if( isset( $_SESSION["staff"] )) header("location: ./staff.php");    //تحويل السيشن لهيئة التدريس
 
-if (isset($p["id"], $p["password"])) {
+if (isset($p["id"], $p["password"])) { //عند الارسال  تحت 
 
   if ($db->query("SELECT * FROM student WHERE username='$p[id]' AND password='$p[password]'")->rowCount() > 0) {
     $user = $db->query("SELECT * FROM student WHERE username='$p[id]' AND password='$p[password]'")->fetch();
@@ -16,7 +16,7 @@ if (isset($p["id"], $p["password"])) {
     header("location: ./staff.php");
   } else {
 
-    $msg = "البيانات التي ادخلتها خاطئة";
+    $msg = "البيانات التي ادخلتها خاطئة"; // لاين 65
   }
 }
 
@@ -72,11 +72,11 @@ if (isset($p["id"], $p["password"])) {
     </div>
     <h1 class="leading-4 text-center">تسجيل الدخول</h1>
     <hr class="mx-auto mb-3" />
-    <form class="row" method="post">
+    <form class="row" method="post">                                
 
       <div class="col-md-6 my-2">
 
-        <label for="buyP" class="form-label">ID</label>
+        <label for="buyP" class="form-label">رقم المستخدم</label>
         <input name="id" type="text" class="form-control" />
       </div>
       <div class="col-6 my-2">

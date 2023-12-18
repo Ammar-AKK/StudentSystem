@@ -8,7 +8,7 @@ define('ADMIN_PASSWORD', 'secret1');
 
 
 
-session_start();
+session_start(); //بداية السيشن 
 $db;
 
 
@@ -21,7 +21,7 @@ $msg = "";
 try {
 
 
-    $db = new PDO(DB_dsn, DB_user, DB_password);
+    $db = new PDO(DB_dsn, DB_user, DB_password); //ربط الداتابيس
 } catch (PDOException $err) {
 
 
